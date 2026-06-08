@@ -1,14 +1,14 @@
 'use client'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { TrendingUp, Users, UserCheck, GitBranch, BarChart2, Target } from 'lucide-react'
+import { TrendingUp, Users, UserCheck, GitBranch, Target } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { TargetsPanel } from './TargetsPanel'
 import { AeTargetsPanel } from './AeTargetsPanel'
 import { SdrTargetsPanel } from './SdrTargetsPanel'
 
-const navItems = [
+const navItems: { href: string; label: string; icon: React.ElementType; disabled?: boolean }[] = [
   { href: '/', label: 'Sales B2B', icon: TrendingUp },
   { href: '/aes', label: 'AEs', icon: Users },
   { href: '/sdrs', label: 'SDRs', icon: UserCheck },
